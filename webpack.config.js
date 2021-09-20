@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+
 module.exports = {
   mode: 'development',
   devServer: {
@@ -46,8 +48,7 @@ module.exports = {
             './index.js',
         },
         remotes: {
-          MFE1:
-            'MFE1@https://rany.tk/mfe/mfe1/dist/2021Feb27/remoteEntry.js',
+          MFE1: 'MFE1@https://rany.tk/mfe/mfe1/dist/2021Feb27/remoteEntry.js',
         },
       }
     ),
