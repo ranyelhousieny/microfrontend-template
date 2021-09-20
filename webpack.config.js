@@ -34,6 +34,12 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.svg$/,
+        use: [
+          '@svgr/webpack',
+        ],
+      },
     ],
   },
   plugins: [
@@ -45,7 +51,7 @@ module.exports = {
 
         exposes: {
           './MFE1':
-            './index.js',
+            './src/index.js',
         },
         remotes: {
           MFE1: 'MFE1@https://rany.tk/mfe/mfe1/dist/2021Feb27/remoteEntry.js',
